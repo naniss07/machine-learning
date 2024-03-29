@@ -1,0 +1,45 @@
+<!-- templates/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ev Fiyatı Tahmini</title>
+</head>
+<body>
+    <h1>Ev Fiyatı Tahmini</h1>
+    <form action="{{ url_for('predict') }}" method="post">
+
+        <label for="banyo_sayisi">Banyo Sayısı:</label>
+        <input type="number" name="banyo_sayisi" required><br>
+
+        <label for="kat_sayisi">Kat Sayısı:</label>
+        <input type="number" name="kat_sayisi" required><br>
+
+        <label for="bina_yasi">Bina Yaşı:</label> <!-- Değiştirildi -->
+        <input type="number" name="bina_yasi" required><br>
+
+        <label for="brut_metrekare">Brüt Metrekare:</label>
+        <input type="number" name="brut_metrekare" step="0.1" required><br>
+
+        <label for="isitma_tipi">Isıtma Tipi:</label>
+        <input type="number" name="isitma_tipi" required><br>
+
+        <label for="net_metrekare">Net Metrekare:</label>
+        <input type="number" name="net_metrekare" step="0.1" required><br>
+
+        <label for="oda_sayisi">Oda Sayısı:</label>
+        <input type="number" name="oda_sayisi" required><br>
+
+        <label for="ilce">İlce:</label>
+        <input type="number" name="ilce" required><br>
+
+        <label for="model">Tahmin Modeli:</label>
+        <select name="model" required>
+            <option value="Random Forest">Random Forest</option>
+        </select><br>
+        
+        <button type="submit">Tahmin Yap</button>
+    </form>
+</body>
+</html>
